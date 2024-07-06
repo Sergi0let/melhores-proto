@@ -496,6 +496,95 @@ h2 {
   line-height: 1.2;
   font-weight: 800
 }
+.seo-content section {
+  margin-bottom: 3.75rem
+}
+.seo-content section:last-child {
+  margin-bottom: 0
+}
+.seo-content section h2 {
+  margin: 1rem 0;
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 1.2
+}
+.seo-content section h3 {
+  margin: 1.5rem 0 1rem;
+  font-weight: 600;
+  line-height: 1.2;
+  font-size: 1.25rem
+}
+.seo-content section p {
+  margin: .625rem 0;
+  font-size: 1rem;
+  line-height: 1.6
+}
+.seo-content section a {
+  color: var(--color-link);
+  text-decoration: underline;
+  transition: color .3s
+}
+.seo-content section a:active {
+  color: var(--color-accent)
+}
+.seo-content section figure {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  text-align: center
+}
+.seo-content section figure img {
+  border-radius: .625rem;
+  max-width: 100%;
+  height: auto
+}
+.seo-content section table {
+  width: 100%;
+  border-spacing: 0 .125rem;
+  margin: 1rem 0
+}
+.seo-content section table caption {
+  display: none
+}
+.seo-content section table tr td,
+.seo-content section table tr th {
+  width: 50%;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--color-grey)
+}
+.seo-content section table tr:first-child th {
+  border-top-left-radius: .625rem
+}
+.seo-content section table tr:last-child th {
+  border-bottom-left-radius: .625rem
+}
+.seo-content section table tr:first-child td {
+  border-top-right-radius: .625rem
+}
+.seo-content section table tr:last-child td {
+  border-bottom-right-radius: .625rem
+}
+.seo-content section table td,
+.seo-content section table th {
+  padding-top: .625rem;
+  padding-bottom: .625rem;
+  background: var(--bg-secondary)
+}
+.seo-content section table th {
+  padding-left: 1.25rem;
+  text-align: left
+}
+.seo-content section ol,
+.seo-content section ul {
+  padding-left: 1.25rem;
+  margin: 1rem 0;
+  font-weight: 400;
+  line-height: 1.6
+}
+.seo-content section ul li {
+  list-style: disc
+}
 .header {
   position: sticky;
   top: 0;
@@ -629,7 +718,7 @@ h2 {
   scroll-snap-align: start
 }
 .best-slots {
-  padding-bottom: 1.5rem
+  margin: 1.5rem auto
 }
 .best-slots__list {
   padding: 1rem 0;
@@ -645,7 +734,7 @@ h2 {
   transform: translateX(-50%)
 }
 .top-list {
-  padding: 40px 0
+  margin: 3.75rem 0
 }
 .top-list__container > p {
   margin: 1rem 0 1rem;
@@ -765,6 +854,28 @@ h2 {
   font-weight: 600;
   line-height: 1.6
 }
+.faq {
+  margin-top: 3.75rem;
+  margin-bottom: 3.75rem
+}
+.faq > h2 {
+  margin-bottom: 1rem
+}
+.faq__item {
+  padding: 1rem;
+  border-radius: .625rem;
+  background: var(--bg-secondary);
+  margin-bottom: .625rem
+}
+.faq__item > h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.6
+}
+.faq__item > p {
+  margin-top: .375rem;
+  line-height: 1.6
+}
 @media (min-width:29.99875em) {
   .footer__top {
     display: flex;
@@ -835,6 +946,34 @@ h2 {
   h2 {
     font-size: 2rem
   }
+  .seo-content section {
+    margin-bottom: 6.25rem
+  }
+  .seo-content section:last-child {
+    margin-bottom: 0
+  }
+  .seo-content section h2 {
+    font-size: 2rem
+  }
+  .seo-content section h3 {
+    margin: 2.5rem 0 1.25rem
+  }
+  .seo-content section figure {
+    margin-top: 1.25rem;
+    margin-bottom: 1.25rem
+  }
+  .seo-content section table {
+    margin: 1.25rem 0
+  }
+  .seo-content section table caption {
+    text-align: left;
+    display: block;
+    margin-bottom: .625rem;
+    font-weight: 600
+  }
+  .seo-content section table th {
+    padding-left: 2rem
+  }
   .header__container {
     justify-content: space-between
   }
@@ -867,6 +1006,9 @@ h2 {
   }
   .best-slots__list {
     grid-template-columns: repeat(3,1fr)
+  }
+  .top-list {
+    margin: 6.25rem 0
   }
   .top-list__container > p {
     margin: 1.5rem 0 .875rem
@@ -907,6 +1049,12 @@ h2 {
   .table-review tbody tr td:nth-child(3) li span:first-child {
     margin-bottom: .5rem;
     margin-right: .375rem
+  }
+  .faq {
+    margin-bottom: 6.25rem
+  }
+  .faq__item {
+    padding: 1.25rem 2rem
   }
 }
 @media (min-width:47.99875em) and (min-width:71.375em) {
@@ -952,6 +1100,10 @@ h2 {
   }
   .footer__content:nth-child(2) {
     flex: 0 0 30%
+  }
+  .offers__list {
+    grid-template-columns: repeat(3,1fr);
+    grid-auto-flow: row
   }
   .offers li {
     min-width: 22.25rem
@@ -1115,6 +1267,10 @@ h2 {
   .btn-load:hover {
     background: var(--color-grey);
     color: var(--color-black)
+  }
+  .seo-content section a:hover {
+    color: var(--color-green);
+    text-decoration: none
   }
   .footer__list nav a:hover {
     color: var(--color-green)
