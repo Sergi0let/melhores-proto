@@ -60,6 +60,7 @@
   --bg-secondary: #21222a;
   --bg-accent: #0de08c;
   --bg-accent-hover: #2aea9e;
+  --bg-shadow: #000000cc;
   --color-border: #414148;
   --color-main: #ffffff;
   --color-grey: #a9afbc;
@@ -337,6 +338,7 @@ h6 {
 .flet:hover {
   border: 1px solid #fff
 }
+.bonus,
 .offer {
   width: 100%;
   height: auto;
@@ -346,6 +348,7 @@ h6 {
   background: linear-gradient(90deg,#3635d3 3%,#00b46d 95%);
   overflow: hidden
 }
+.bonus::after,
 .offer::after {
   content: "";
   width: 100%;
@@ -416,6 +419,34 @@ h6 {
   z-index: 2;
   text-align: center
 }
+.bonus .btn-primary,
+.bonus__block {
+  position: relative;
+  z-index: 2
+}
+.bonus .btn-primary {
+  text-align: center
+}
+.bonus__block {
+  display: flex;
+  align-items: center;
+  margin-bottom: .375rem
+}
+.bonus__block > div p {
+  line-height: 1.4
+}
+.bonus__block > div p:first-child {
+  font-weight: 400;
+  font-size: .875rem;
+  color: var(--color-light-grey)
+}
+.bonus__block > div p:nth-child(2) {
+  font-weight: 700;
+  font-size: 1rem
+}
+.bonus figure {
+  margin-right: .75rem
+}
 .best-slot {
   border-radius: .75rem .75rem 0 0;
   overflow: hidden
@@ -465,19 +496,62 @@ h6 {
   padding-right: .25rem;
   font-weight: 600
 }
+.breadcrumbs {
+  padding-bottom: .875rem
+}
+.breadcrumbs > ol {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  font-size: .875rem;
+  line-height: 1.6
+}
+.breadcrumbs > ol > li:not(:last-child)::after {
+  display: inline-block;
+  margin-right: .625rem;
+  padding-left: .625rem;
+  content: "/"
+}
+.breadcrumbs > ol > li::after,
+.breadcrumbs > ol > li:last-child {
+  color: var(--color-grey)
+}
+.breadcrumbs > ol > li:last-child > a {
+  cursor: default
+}
 .btn-load,
-.btn-primary {
+.btn-primary,
+.btn-secondary {
+  width: 100%;
   font-size: 1rem;
   border-radius: .625rem;
-  font-weight: 700
+  font-weight: 700;
+  line-height: 1.6
+}
+.btn-load > svg,
+.btn-primary > svg,
+.btn-secondary > svg {
+  display: none
+}
+.btn-load:has(svg),
+.btn-primary:has(svg),
+.btn-secondary:has(svg) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: .375rem;
+  line-height: 1
 }
 .btn-primary {
-  width: 100%;
   padding: .625rem;
   background: var(--bg-accent);
   transition: background .3s;
-  color: var(--color-black);
-  line-height: 1.6
+  color: var(--color-black)
+}
+.btn-secondary {
+  padding: .625rem;
+  background: var(--color-grey);
+  color: var(--color-black)
 }
 .btn-load {
   padding: .5rem 1.75rem;
@@ -495,93 +569,93 @@ h2 {
   line-height: 1.2;
   font-weight: 800
 }
-.seo-content section {
+.seo-content {
   margin-bottom: 3.75rem
 }
-.seo-content section:last-child {
-  margin-bottom: 0
-}
-.seo-content section h2 {
-  margin: 1rem 0;
-  font-weight: 700;
-  font-size: 1.5rem;
-  line-height: 1.2
-}
-.seo-content section h3 {
-  margin: 1.5rem 0 1rem;
-  font-weight: 600;
-  line-height: 1.2;
-  font-size: 1.25rem
-}
-.seo-content section p {
-  margin: .625rem 0;
-  font-size: 1rem;
-  line-height: 1.6
-}
-.seo-content section a {
-  color: var(--color-link);
-  text-decoration: underline;
-  transition: color .3s
-}
-.seo-content section a:active {
-  color: var(--color-accent)
-}
-.seo-content section figure {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  text-align: center
-}
-.seo-content section figure img {
-  border-radius: .625rem;
-  max-width: 100%;
-  height: auto
-}
-.seo-content section table {
+.seo-content table {
   width: 100%;
   border-spacing: 0 .125rem;
   margin: 1rem 0
 }
-.seo-content section table caption {
+.seo-content table caption {
   display: none
 }
-.seo-content section table tr td,
-.seo-content section table tr th {
+.seo-content table tr td,
+.seo-content table tr th {
   width: 50%;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.6;
   color: var(--color-grey)
 }
-.seo-content section table tr:first-child th {
+.seo-content table tr:first-child th {
   border-top-left-radius: .625rem
 }
-.seo-content section table tr:last-child th {
+.seo-content table tr:last-child th {
   border-bottom-left-radius: .625rem
 }
-.seo-content section table tr:first-child td {
+.seo-content table tr:first-child td {
   border-top-right-radius: .625rem
 }
-.seo-content section table tr:last-child td {
+.seo-content table tr:last-child td {
   border-bottom-right-radius: .625rem
 }
-.seo-content section table td,
-.seo-content section table th {
+.seo-content table td,
+.seo-content table th {
   padding-top: .625rem;
   padding-bottom: .625rem;
   background: var(--bg-secondary)
 }
-.seo-content section table th {
+.seo-content table th {
   padding-left: 1.25rem;
   text-align: left
 }
-.seo-content section ol,
-.seo-content section ul {
+.seo-content:last-child {
+  margin-bottom: 0
+}
+.seo-content h2 {
+  margin: 1rem 0;
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 1.2
+}
+.seo-content h3 {
+  margin: 1.5rem 0 1rem;
+  font-weight: 600;
+  line-height: 1.2;
+  font-size: 1.25rem
+}
+.seo-content p {
+  margin: .625rem 0;
+  font-size: 1rem;
+  line-height: 1.6
+}
+.seo-content a {
+  color: var(--color-link);
+  text-decoration: underline;
+  transition: color .3s
+}
+.seo-content a:active {
+  color: var(--color-accent)
+}
+.seo-content figure {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  text-align: center
+}
+.seo-content figure img {
+  border-radius: .625rem;
+  max-width: 100%;
+  height: auto
+}
+.seo-content ol,
+.seo-content ul {
   padding-left: 1.25rem;
   margin: 1rem 0;
   font-weight: 400;
   line-height: 1.6
 }
-.seo-content section ul li {
+.seo-content ul li {
   list-style: disc
 }
 .header {
@@ -685,9 +759,74 @@ h2 {
   line-height: 1.2;
   text-wrap: balance
 }
-.hero > p {
+.hero__sub-title {
   padding-top: 1.125rem;
   line-height: 1.6
+}
+.hero figure caption {
+  padding-bottom: .625rem;
+  display: block;
+  text-align: left
+}
+.slot-demo {
+  margin: 1rem 0;
+  position: relative;
+  border-radius: .625rem;
+  overflow: hidden
+}
+.slot-demo:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--bg-shadow)
+}
+.slot-demo__img {
+  width: 100%;
+  height: 100%
+}
+.slot-demo__img img {
+  width: 100%;
+  height: 100%
+}
+.slot-demo__content {
+  width: 15rem;
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  text-align: center
+}
+.slot-demo__content > *:not(:last-child) {
+  margin-bottom: .875rem
+}
+.slot-demo__content > p {
+  color: var(--color-grey);
+  font-size: .875rem;
+  line-height: 1.4
+}
+.slot-demo__content > button {
+  min-height: 2.875rem
+}
+.slot-demo__table {
+  margin-bottom: 0
+}
+.slot-demo-text {
+  margin: 1rem 0 0;
+  font-size: 1rem;
+  line-height: 1.6
+}
+.slot-demo-games {
+  margin: 3.75rem auto
+}
+.slot-demo-games__sub-title {
+  margin-top: 1rem;
+  line-height: 1.4;
+  font-size: .875rem
 }
 .offers {
   margin-top: 1.125rem;
@@ -716,17 +855,36 @@ h2 {
   min-width: 21.4375rem;
   scroll-snap-align: start
 }
+.bonuses {
+  margin: 1rem 0
+}
+.bonuses__title {
+  font-weight: 600;
+  font-size: 1.25rem;
+  line-height: 1.2
+}
+.bonuses__list {
+  margin-top: .625rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem
+}
 .best-slots {
   margin: 1.5rem auto
 }
-.best-slots__list {
+.best-slots__list,
+.slot-demo-games__list {
   padding: 1rem 0;
   display: grid;
   grid-template-columns: repeat(2,1fr);
   gap: .625rem;
   flex-wrap: wrap
 }
-.best-slots__more {
+.best-slots__more,
+.slot-demo-games__more {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   position: relative;
   left: 50%;
   -webkit-transform: translateX(-50%);
@@ -734,6 +892,13 @@ h2 {
 }
 .top-list {
   margin: 3.75rem 0
+}
+.top-list__container h2 {
+  display: flex;
+  align-items: center
+}
+.top-list__container h2 svg {
+  margin-right: 1rem
 }
 .top-list__container > p {
   margin: 1rem 0 1rem;
@@ -959,39 +1124,47 @@ h2 {
   .best-slot__content ul li span:last-child {
     font-size: 1rem
   }
+  .breadcrumbs {
+    padding-bottom: 2.5rem
+  }
+  .btn-load > svg,
+  .btn-primary > svg,
+  .btn-secondary > svg {
+    display: block
+  }
   .btn-load {
     padding: .75rem 1.75rem
   }
   h2 {
     font-size: 2rem
   }
-  .seo-content section {
-    margin-bottom: 6.25rem
-  }
-  .seo-content section:last-child {
-    margin-bottom: 0
-  }
-  .seo-content section h2 {
-    font-size: 2rem
-  }
-  .seo-content section h3 {
-    margin: 2.5rem 0 1.25rem
-  }
-  .seo-content section figure {
-    margin-top: 1.25rem;
-    margin-bottom: 1.25rem
-  }
-  .seo-content section table {
+  .seo-content table {
     margin: 1.25rem 0
   }
-  .seo-content section table caption {
+  .seo-content table caption {
     text-align: left;
     display: block;
     margin-bottom: .625rem;
     font-weight: 600
   }
-  .seo-content section table th {
+  .seo-content table th {
     padding-left: 2rem
+  }
+  .seo-content {
+    margin-bottom: 6.25rem
+  }
+  .seo-content:last-child {
+    margin-bottom: 0
+  }
+  .seo-content h2 {
+    font-size: 2rem
+  }
+  .seo-content h3 {
+    margin: 2.5rem 0 1.25rem
+  }
+  .seo-content figure {
+    margin-top: 1.25rem;
+    margin-bottom: 1.25rem
   }
   .header__container {
     justify-content: space-between
@@ -1002,15 +1175,30 @@ h2 {
   .main {
     padding-top: 2rem
   }
+  .main:has(.breadcrumbs) {
+    padding-top: 1.25rem
+  }
   .hero > h1 {
     text-align: center;
     font-size: 2.5rem
   }
-  .hero > p {
+  .hero__sub-title {
     max-width: 41.9375rem;
     margin: 0 auto;
     padding-top: 1.25rem;
     text-align: center
+  }
+  .slot-demo {
+    margin: 2rem 0
+  }
+  .slot-demo-text {
+    margin: 2rem 0 0
+  }
+  .slot-demo-games {
+    margin: 6.25rem auto
+  }
+  .slot-demo-games__sub-title {
+    margin-top: 1.5rem
   }
   .offers {
     margin-top: 1.5rem;
@@ -1023,7 +1211,16 @@ h2 {
     grid-gap: 1.25rem;
     scroll-padding-inline: 1.25rem
   }
-  .best-slots__list {
+  .bonuses {
+    margin: 2rem 0
+  }
+  .bonuses__list {
+    margin-top: 1rem;
+    grid-template-columns: repeat(2,1fr);
+    gap: 1.25rem
+  }
+  .best-slots__list,
+  .slot-demo-games__list {
     grid-template-columns: repeat(3,1fr)
   }
   .top-list {
@@ -1132,7 +1329,11 @@ h2 {
   .offers li {
     min-width: 22.25rem
   }
-  .best-slots__list {
+  .bonuses__list {
+    grid-template-columns: repeat(3,1fr)
+  }
+  .best-slots__list,
+  .slot-demo-games__list {
     padding: 1.5rem 0;
     grid-template-columns: repeat(4,1fr);
     gap: 1.25rem
@@ -1320,7 +1521,7 @@ h2 {
     background: var(--color-grey);
     color: var(--color-black)
   }
-  .seo-content section a:hover {
+  .seo-content a:hover {
     color: var(--color-green);
     text-decoration: none
   }
